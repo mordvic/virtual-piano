@@ -1,0 +1,15 @@
+.btn {
+  width: 25rem;
+  padding: 2.5rem;
+  margin: 0;
+  font-size: 2rem;
+  color: #FFFFFF;
+  background: #515961;
+  box-shadow: transparent;
+  border: transparent;
+  outline: transparent;
+
+  &:hover {
+    background: #00c9b7;
+  }
+}
