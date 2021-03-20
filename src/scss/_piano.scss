@@ -65,7 +65,7 @@
     display: none;
   }
 
-  &:hover {
+  &.piano-key--play  {
     height: 95%;
     box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 #fff, inset 1px 0 0 #fff, inset -1px 0 0 #fff, 0 4px 3px rgba(0, 0, 0, .7), inset 0 -1px 0 #fff, inset 1px 0 0 #fff, inset -1px -1px 15px #000, -3px 4px 6px rgba(0, 0, 0, .5);
     transition: all .900ms linear;
@@ -105,7 +105,7 @@
       }
     }
 
-    &:hover {
+    &.piano-key--play {
       height: 70%;
       border-bottom-width: .4rem;
       box-shadow: none;

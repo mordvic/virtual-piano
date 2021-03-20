@@ -2,6 +2,12 @@ const getPianoKeys = () => {
     return document.querySelectorAll('.piano-key');
 }
 
+const getPianoKeysLetters = (pianoKeys) => {
+    const pianoKeysLetter = [];
+    pianoKeys.forEach((key)=> pianoKeysLetter.push(key.dataset.letter));
+    return pianoKeysLetter;
+}
+
 const createDescriptionKey = (key, value) => {
     let span = document.createElement('span');
     span.innerText = value;
@@ -35,4 +41,4 @@ const changeKeyDescriptionByOption = (optionKey) => {
     })
 }
 
-export  {addInitialKeyDescription, changeKeyDescriptionByClick, getPianoKeys};
+export  {addInitialKeyDescription, changeKeyDescriptionByClick, getPianoKeys, getPianoKeysLetters};
