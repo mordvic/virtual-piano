@@ -1,11 +1,13 @@
 'use strict';
 
-import {addInitialKeyDescription, changeKeyDescriptionByClick, getPianoKeys} from "./pianoKeyDescription";
-import {playMusicByKeyboard} from "./keyboard";
+import {addInitialKeyDescription} from "./pianoKeyDescription";
+import {playKeyByKeyboard, playKeyByMouse} from "./piano";
+import {executeOption} from "./options";
 
 document.addEventListener("DOMContentLoaded", (e) => {
     addInitialKeyDescription();
-    changeKeyDescriptionByClick();
-    playMusicByKeyboard();
+    executeOption();
+    playKeyByKeyboard();
+    playKeyByMouse();
 
 } );

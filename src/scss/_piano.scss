@@ -61,11 +61,15 @@
   inset -1px -1px 15px rgba(0, 0, 0, .5),
   -3px 4px 6px rgba(0, 0, 0, .5);
 
+  &:hover {
+    background-color: antiquewhite;
+  }
+
   span {
     display: none;
   }
 
-  &.piano-key--play  {
+  &.piano-key--play {
     height: 95%;
     box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 #fff, inset 1px 0 0 #fff, inset -1px 0 0 #fff, 0 4px 3px rgba(0, 0, 0, .7), inset 0 -1px 0 #fff, inset 1px 0 0 #fff, inset -1px -1px 15px #000, -3px 4px 6px rgba(0, 0, 0, .5);
     transition: all .900ms linear;
@@ -90,6 +94,10 @@
     border-width: 0 .4rem 1.2rem;
     background-color: black;
 
+    &:hover {
+      background-color: #313940;
+    }
+
     @media (max-width: 32rem) {
       width: 3.5rem;
     }
@@ -97,11 +105,13 @@
     &.show-description {
       span {
         position: absolute;
-        bottom: 1rem;
+        top: -.1rem;
         width: 100%;
+        height: 3rem;
         text-align: center;
-        font-size: 3rem;
+        font-size: 2rem;
         color: #FFFFFF;
+        z-index: 100;
       }
     }
 
@@ -159,6 +169,10 @@
   align-items: center;
   flex-wrap: wrap;
 
+  .option--active {
+    background: #00c9b7;
+  }
+
   .btn + .btn {
     margin-left: 1rem;
   }
@@ -175,10 +189,11 @@
 .show-description {
   span {
     position: absolute;
-    bottom: 0;
+    bottom: -4.5rem;
     display: block;
     width: 100%;
     text-align: center;
     font-size: 3rem;
+    color: #FFFFFF;
   }
 }

@@ -2,12 +2,6 @@ const getPianoKeys = () => {
     return document.querySelectorAll('.piano-key');
 }
 
-const getPianoKeysLetters = (pianoKeys) => {
-    const pianoKeysLetter = [];
-    pianoKeys.forEach((key)=> pianoKeysLetter.push(key.dataset.letter));
-    return pianoKeysLetter;
-}
-
 const createDescriptionKey = (key, value) => {
     let span = document.createElement('span');
     span.innerText = value;
@@ -15,22 +9,21 @@ const createDescriptionKey = (key, value) => {
 }
 
 const addInitialKeyDescription = () => {
-    let keys = getPianoKeys();
-    keys.forEach((key => createDescriptionKey(key, key.dataset.note)));
-}
-
-const changeKeyDescriptionByClick = () => {
-    let keyOptions = document.querySelector('.options');
-    keyOptions.addEventListener('click', (e) => {
-        if (e.target.dataset.optionKey === 'letter') {
-            changeKeyDescriptionByOption(e.target.dataset.optionKey)
-        } else if (e.target.dataset.optionKey === 'note') {
-            changeKeyDescriptionByOption(e.target.dataset.optionKey)
+    function initialDescription(typeOfDescription) {
+        let keys = getPianoKeys();
+        let getOptionByType = document.querySelector(`[data-option=${typeOfDescription}]`);
+        getOptionByType.classList.add(('option--active'));
+        if (typeOfDescription === 'note') {
+            keys.forEach((key => createDescriptionKey(key, key.dataset.note)));
+        } else {
+            keys.forEach((key => createDescriptionKey(key, key.dataset.letter)));
         }
-    })
+    }
+
+    initialDescription('letter')
 }
 
-const changeKeyDescriptionByOption = (optionKey) => {
+const changeKeyDescription = (optionKey) => {
     let pianoKeys = getPianoKeys();
     pianoKeys.forEach((key) => {
         if (optionKey === 'letter') {
@@ -41,4 +34,4 @@ const changeKeyDescriptionByOption = (optionKey) => {
     })
 }
 
-export  {addInitialKeyDescription, changeKeyDescriptionByClick, getPianoKeys, getPianoKeysLetters};
+export {addInitialKeyDescription, getPianoKeys, changeKeyDescription};
