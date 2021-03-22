@@ -60,7 +60,7 @@ const playKeyByMouse = () => {
         play(createMapOfAudioFiles(), e);
     })
 
-    firstOctave.addEventListener('mouseup', e => {
+    document.addEventListener('mouseup', e => {
             isMouseClicked = false;
         }
     )

@@ -22,7 +22,6 @@ const executeOption = () => {
                 document.querySelector('[data-option=letter]').classList.remove('option--active')
             } else if (e.target.dataset.option === 'fullScreen') {
                 fullScreen();
-                e.target.classList.toggle('option--active')
             }
         })
     }

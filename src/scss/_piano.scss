@@ -171,15 +171,15 @@
   }
 }
 
+:-webkit-full-screen .option-fullScreen {
+  background: #00c9b7;
+}
+
 .options {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-
-  .option--active {
-    background: #00c9b7;
-  }
 
   .btn + .btn {
     margin-left: 1rem;
