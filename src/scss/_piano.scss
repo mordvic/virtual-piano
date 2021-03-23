@@ -181,6 +181,10 @@
   align-items: center;
   flex-wrap: wrap;
 
+  .option--active {
+    background: #00c9b7;
+  }
+
   .btn + .btn {
     margin-left: 1rem;
   }
